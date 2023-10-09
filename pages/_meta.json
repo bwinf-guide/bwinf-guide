@@ -1,0 +1,26 @@
+{
+  "index": {
+    "type": "page",
+    "title": "BWINF.GUIDE",
+    "display": "hidden",
+    "theme": {
+      "layout": "raw"
+    }
+  },
+  "allgemeines": {
+    "type":"page",
+    "title":"Allgemeines"
+  },
+  "bwinf": {
+    "type":"page",
+    "title":"BWINF"
+  },
+  "about": {
+    "type":"page",
+    "title":"Über uns"
+  },
+  "topics":{
+    "type":"page",
+    "title":"Themen"
+  }
+}

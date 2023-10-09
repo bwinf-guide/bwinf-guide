@@ -1,0 +1,23 @@
+.index-container {
+  @apply flex flex-col items-center justify-center px-16;
+}
+
+.title-container {
+  @apply h-[calc(100vh-74px)] w-full flex flex-col items-baseline justify-center;
+}
+
+.title-container * {
+  @apply my-6;
+}
+
+h1.title {
+  @apply font-bold text-8xl;
+}
+
+p.subtitle {
+  @apply text-xl w-2/3;
+}
+
+.start-btn {
+  @apply bg-amber-500 hover:bg-amber-600 text-white font-bold px-6 rounded-lg uppercase text-xl;
+}

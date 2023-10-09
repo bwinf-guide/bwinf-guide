@@ -1,0 +1,16 @@
+.footer-links a {
+  @apply text-zinc-800;
+  width: fit-content;
+}
+
+:global(.dark) .footer-links a {
+  @apply text-zinc-200;
+}
+
+.footer-links a:hover {
+  @apply text-amber-500;
+}
+
+:global(.dark) .footer-links a:hover {
+  @apply text-amber-300;
+}
