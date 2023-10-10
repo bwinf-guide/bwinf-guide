@@ -10,7 +10,7 @@ const AppFooter: React.FC = () => {
             <strong>Links</strong>
           </h4>
           <a href="https://bwinf.de">BWINF.de</a>
-          <a href="/">Alumni Verein</a>
+          <a href="https://alumni.bwinf.de/">Alumni Verein</a>
           <a href="https://github.com/bwinf-guide/bwinf-guide">Github</a>
         </nav>
         <p className="mt-8">
