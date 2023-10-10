@@ -11,6 +11,7 @@ export default {
   project: {
     link: 'https://github.com/bwinf-guide/bwinf-guide'
   },
+  docsRepositoryBase: "https://github.com/bwinf-guide/bwinf-guide/tree/main",
   useNextSeoProps() {
     const { asPath } = useRouter()
     if (asPath !== '/') {
