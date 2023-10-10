@@ -7,7 +7,7 @@
       "layout": "raw"
     }
   },
-  "allgemeines": {
+  "general": {
     "type":"page",
     "title":"Allgemeines"
   },
