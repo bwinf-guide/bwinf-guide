@@ -1,6 +1,6 @@
 import AppFooter from '@components/AppFooter'
 import React from 'react'
-import { ThemeSwitch } from 'nextra-theme-docs'
+import { ThemeSwitch, useConfig } from 'nextra-theme-docs'
 import { useRouter } from 'next/router'
 
 export default {
@@ -18,6 +18,22 @@ export default {
         titleTemplate: '%s - BWINF GUIDE',
       }
     }
+  },
+  head: () => {
+    const { asPath, defaultLocale, locale } = useRouter()
+    const { frontMatter } = useConfig()
+    const url =
+      'https://bwinf.guide' + asPath
+ 
+    return (
+      <>
+        <meta property="og:url" content={url} />
+        <meta
+          property="og:description"
+          content={frontMatter.description || 'Eine Einführung in den Bundeswettbewerb Informatik'}
+        />
+      </>
+    )
   },
   primaryHue: 48,
   primarySaturation: 100,
