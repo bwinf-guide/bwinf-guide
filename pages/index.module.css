@@ -19,5 +19,9 @@ p.subtitle {
 }
 
 .start-btn {
-  @apply bg-amber-500 hover:bg-amber-600 text-white font-bold px-6 rounded-lg uppercase text-xl;
+  @apply bg-amber-500 hover:bg-amber-600 text-white font-bold px-6 py-4 rounded-lg uppercase text-[1.4rem];
+}
+
+.start-btn p {
+  @apply my-0;
 }

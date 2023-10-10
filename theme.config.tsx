@@ -1,4 +1,4 @@
-import AppFooter from './components/AppFooter'
+import AppFooter from '@components/AppFooter'
 import React from 'react'
 import { ThemeSwitch } from 'nextra-theme-docs'
 
