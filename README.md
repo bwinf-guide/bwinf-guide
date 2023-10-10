@@ -1,7 +1,5 @@
 # BWINF GUIDE
 
-Trete unsere Discord bei!
-
 ## Einstieg
 
 Gerne kannst du dir irgendwas von [To-Do](https://github.com/orgs/bwinf-guide/projects/1/) aussuchen und damit arbeiten. 
@@ -21,5 +19,7 @@ npm run build
 ```
 
 (c) 2023 BWINF GUIDE. Alle Beitragenden.
+
 CC-BY-NC 4.0
+
 Dies ist keine offizielle Website der Bundesweiten Informatikwettbewerbe.
