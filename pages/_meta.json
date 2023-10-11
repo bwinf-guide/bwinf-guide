@@ -8,19 +8,22 @@
     }
   },
   "general": {
-    "type":"page",
-    "title":"Allgemeines"
+    "type": "page",
+    "title": "Allgemeines"
   },
   "bwinf": {
-    "type":"page",
-    "title":"BWINF"
+    "type": "page",
+    "title": "BWINF"
   },
   "about": {
-    "type":"page",
-    "title":"Über uns"
+    "type": "page",
+    "title": "Über uns"
   },
-  "topics":{
-    "type":"page",
-    "title":"Themen"
+  "topics": {
+    "type": "page",
+    "title": "Themen",
+    "theme": {
+      "layout": "full"
+    }
   }
 }
