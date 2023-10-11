@@ -22,13 +22,17 @@ export default {
   },
   head: () => {
     const { asPath, defaultLocale, locale } = useRouter()
-    const { frontMatter } = useConfig()
+    const { title, frontMatter } = useConfig()
     const url =
       'https://bwinf.guide' + asPath
  
     return (
       <>
         <meta property="og:url" content={url} />
+        <meta
+          name="og:title"
+          content={title ? title + ' - BWINF GUIDE' : 'BWINF GUIDE'}
+        />
         <meta
           property="og:description"
           content={frontMatter.description || 'Eine Einführung in den Bundeswettbewerb Informatik'}

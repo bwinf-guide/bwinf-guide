@@ -1,3 +1,6 @@
 {
-    "index": "Übersicht"
+    "index": "Übersicht",
+    "algo": "Algorithmen",
+    "theo": "Theoretische Informatik",
+    "tips": "Tipps"
 }
