@@ -1,4 +1,4 @@
-import { Card, Cards } from 'nextra/components'
+import { Cards } from 'nextra/components'
 import IncompletePage from '@components/IncompletePage.tsx'
 
 
@@ -6,9 +6,19 @@ import IncompletePage from '@components/IncompletePage.tsx'
 
 <IncompletePage />
 
-<Cards>
-  <Card icon={<></>} title="Big O Notation" href="./" />
-  <Card icon={<></>} title="Big O Notation" href="./" />
-  <Card icon={<></>} title="Big O Notation" href="./" />
-  <Card icon={<></>} title="Big O Notation" href="./" />
+## Inhaltiche Themen
+<Cards num={3}>
+  <Cards.Card image
+    arrow title="Einführung in die Programmierung" href="./" />
+  <Cards.Card image
+    arrow title="Algorithmenentwurf" href="./" />
+  <Cards.Card image arrow title="Theoretische Informatik" href="./" />
+</Cards>
+
+## Weiteres
+<Cards num={3}>
+  <Cards.Card image
+    arrow title="Dokumentation" href="./" />
+  <Cards.Card image
+    arrow title="Ablauf" href="./" />
 </Cards>
