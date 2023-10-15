@@ -5,3 +5,22 @@
 pre {
   white-space: pre-wrap;
 }
+
+/* sketchy sry aber sehe keine Alternative */
+main a.nx-underline {
+  text-decoration: none;
+
+  @apply text-amber-700; 
+}
+
+main a.nx-underline:hover {
+  @apply text-amber-500;
+}
+
+.dark main a.nx-underline {
+  @apply text-amber-400;
+}
+
+.dark main a.nx-underline:hover {
+  @apply text-amber-300;
+} 
