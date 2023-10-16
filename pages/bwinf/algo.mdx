@@ -7,7 +7,7 @@ import IncompletePage from '@components/IncompletePage.tsx'
 # Algorithmenentwurf
 
 ## *Algorithmus*
-Ein zentrales Thema des BWINF ist der Algorithmenentwurf. Ein Algorithmus ist letztendlich eine Schrittabfolge, mit welcher ein spezifisches Problem bzw. eine Aufgabe, auf eine *allgemeine Art* gelöst wird. Die Aufgaben des BWINF sind Probleme oder vereinfacht gesagt Rätseltyp, wobei  das Ziel ist darin besteht ein Verfahren zu finden, mit welchem man alle möglichen Rätsel des beschriebenen Typs lösen kann, dies ist unter dem Stichwort *allgemeine Art* zu verstehen.<br/>
+Ein zentrales Thema des BWINF ist der Algorithmenentwurf. Ein Algorithmus ist letztendlich eine Schrittabfolge, mit welcher ein spezifisches Problem bzw. eine Aufgabe auf eine *allgemeine Art* gelöst wird. Die Aufgaben des BWINF sind Probleme oder vereinfacht gesagt Rätseltypen, wobei das Ziel darin besteht ein Verfahren zu finden, mit welchem man alle möglichen Rätsel des beschriebenen Typs lösbar sind, dies ist unter dem Stichwort *allgemeine Art* zu verstehen.<br/>
 
 Beispielsweise könnte unser Problem bzw. Rätsel lauten: 
 
@@ -15,15 +15,15 @@ Beispielsweise könnte unser Problem bzw. Rätsel lauten:
 
 Nun könnte man selbstverständlich anfangen und verschiedene Zahlen auf die genannte Eigenschaft überprüfen und sicherlich schnell eine Zahl finden, welche diese Eigenschaft erfüllt. Doch wie kann man sicherstellen, dass es keine größere Zahl mit den genannten Eigenschaften gibt? <br/>
 
-Naja, man könnte alle Zahlen, welche in Frage kommen, ausprobieren. Hiermit würde man bereits ein erstes Muster des Algorithmenentwurfs nutzen (mehr dazu im Abschnitt [Brute Force](./algo/bf)).
-Es fällt auf, dass nur Zahlen, welche kleiner oder gleich $48$ sind, überhaupt möglich sind. Somit müsste man $44$ Zahlen ausprobieren. 
+Man könnte alle Zahlen, welche in Frage kommen, ausprobieren. Hiermit würde man bereits ein erstes Muster des Algorithmenentwurfs nutzen (mehr dazu im Abschnitt [Brute Force](./algo/bf)).
+Es fällt auf, dass nur Zahlen kleiner oder gleich $48$ überhaupt möglich sind. Somit müsste man $44$ Zahlen ausprobieren. 
 <Callout type="info">
-  Mit einigen Überlegungen kannst man die Anzahl an auszuprobierenden Zahlen noch wesentlich reduzieren bzw. auch einen anderen Algorithmus finden, mit welchen sich das Problem *schneller* lösen lässt (mehr dazu im Abschnitt [Laufzeitanalyse](./algo/analysis))
+  Mit einigen Überlegungen kann man die Anzahl an auszuprobierenden Zahlen noch wesentlich reduzieren bzw. auch einen anderen Algorithmus finden, mit welchen sich das Problem *schneller* lösen lässt (mehr dazu im Abschnitt [Laufzeitanalyse](./algo/analysis))
 </Callout>
 
-Wir haben also einen möglichen Lösungsansatz gefunden um unser beschriebenes Rätsel zu lösen. Die relevante Frage besteht nun jedoch darin, wie wir unser Lösungsverfahren auf eine **allgemeineres** Problem anwenden können: 
+Wir haben also einen möglichen Lösungsansatz gefunden um das beschriebene Rätsel zu lösen. Die relevante Frage besteht nun jedoch darin, wie wir unser Lösungsverfahren auf eine **allgemeineres** Problem anwenden können: 
 > Gegeben zwei positive ganze Zahlen $a$ und $b$, finde die größte positive ganze Zahl, welche die Eigenschaft hat, dass $a$ und $b$ durch diese Zahl teilbar sind. Also bei Division eine ganze Zahl rauskommt. 
 
 Wir haben also die $48$ und $120$ aus dem vorherigen Rätsel durch zwei beliebige positive ganze Zahlen ersetzt.<br/> 
-Eine mögliche Verallgemeinerung unseres Verfahrens wäre nun, alle Zahlen welche kleiner oder gleich der kleineren der beiden Zahlen $a$ und $b$ ist auf die gesuchte Eigenschaft zu überprüfen.
-Bei dieser Problemstellung ist die Korrektheit unseres Verfahrens eher unkompliziert zu überprüfen. Wie sind uns darüber bewusst, dass wir alle möglichen Kandidaten ausprobieren und deswegen die richtige Lösung finden. Bei komplizierteren Aufgaben ist es jedoch deutlich schwieriger sich klar zu machen, dass der eigene Algorithmus korrekt ist und für alle möglichen Eingaben die richtige Lösung findet (es gibt häufig unendlich viele Eingaben). Die Argumentation für Korrektheit ist jedoch extrem wichtig und gehört zum Algorithmenentwurf dazu (mehr dazu [Korrektheit von Algorithmen](./algo/correctness)).
+Eine mögliche Verallgemeinerung unseres Verfahrens wäre nun, alle Zahlen welche kleiner oder gleich der kleineren der beiden Zahlen $a$ und $b$ sind, auf die gesuchte Eigenschaft zu überprüfen.
+Bei dieser Problemstellung ist die Korrektheit unseres Verfahrens eher unkompliziert zu überprüfen. Wir sind uns darüber bewusst, dass wir alle möglichen Kandidaten ausprobieren und deswegen die richtige Lösung finden. Bei komplizierteren Aufgaben ist es jedoch deutlich schwieriger sich klar zu machen, dass der eigene Algorithmus korrekt ist und für alle möglichen Eingaben die richtige Lösung findet (es gibt häufig unendlich viele Eingaben). Die Argumentation für Korrektheit ist jedoch extrem wichtig und gehört zum Algorithmenentwurf dazu (mehr dazu [Korrektheit von Algorithmen](./algo/correctness)).
