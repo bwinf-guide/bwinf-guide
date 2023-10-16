@@ -25,7 +25,7 @@ export default {
     const { title, frontMatter } = useConfig()
     const url =
       'https://bwinf.guide' + asPath
- 
+
     return (
       <>
         <meta property="og:url" content={url} />

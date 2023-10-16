@@ -1,5 +1,8 @@
 {
-  "graph": "Graphen",
+  "analysis": "Laufzeitanalyse",
   "bf": "Brute Force",
-  "ds": "Datenstrukturen"
+  "graph": "Graphen",
+  "ds": "Datenstrukturen",
+  "correctness": "Korrektheit",
+  "opt": "Optimierungsprobleme"
 }
