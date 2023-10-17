@@ -24,18 +24,18 @@ keinen Algorithmus geben kann, der schneller als exponentiell ist.
 
 In der Komplexitätstheorie werden Probleme in Schwierigkeitsklassen eingeordnet.
 Für den Bundeswettbewerb sind vor allem die Klassen $\mathcal{P}$,
-$\mathcal{NP}$ und $\mathcal{NP-HARD}$ wichtig. Zur Klasse $\mathcal{P}$ gehören
+$\mathcal{NP}$ und $\mathcal{NP}$-HARD wichtig. Zur Klasse $\mathcal{P}$ gehören
 Probleme, die in polynomieller Zeit gelößt werden können, das heißt, es gibt
 einen Algorithmus mit Zeitkomplexität $O(n^k)$ mit festem $k$. Die Zugehörigkeit
 zu dieser Klasse wird durch einen Algorithmus zusammen mit einer Analyse seiner
  Laufzeit gezeigt. Zur Klasse $\mathcal{NP}$ gehören Probleme, bei denen die
  Richtigkeit einer Lösung schnell (in polynomieller Zeit) überprüfbar ist.
  Zugehörigkeit wird auch hier durch Angabe eines Algorithmus gezeigt. Zur Klasse
- $\mathcal{NP-HARD}$ gehören Probleme, die mindestens so schwer sind, wie alle
+ $\mathcal{NP}$-HARD gehören Probleme, die mindestens so schwer sind, wie alle
  Probleme in $\mathcal{NP}$. Für solche Probleme gibt es (vermutlich) keine
  schnellen Algorithmen.
 
-## Die Klasse $\mathcal{P}$
+## Die Klasse P
 
 Probleme gehören zur Klasse $\mathcal{P}$, wenn es einen Algorithmus gibt, der
 sie in polynomieller Zeit löst, also Zeit in $O(n^k)$ mit festem $k$ benötigt.
@@ -60,7 +60,7 @@ Vergleichsoperationen, und unter der Annahme, dass ein Vergleich konstante Zeit
 benötigt, so auch Zeit $O(n^2)$. Damit haben wir gezeigt, dass dieses Problem in
 $\mathcal{P}$ liegt.
 
-## Die Klasse $\mathcal{NP}$
+## Die Klasse NP
 
 Zur Klasse $\mathcal{NP}$ gehören Probleme, bei denen eine Lösung schnell
 überprüft werden kann. Die Erfüllbarkeit aussagenlogischer Ausdrücke von oben
@@ -72,25 +72,25 @@ gegebeben haben, können wir den schnellen Lösungsalgorithmus anwenden und
 überprüfen, ob die gegebene Lösung zur gefundenen equivalent ist, und so schnell
 deren Richtigkeit prüfen.
 
-## Die Klasse $\mathcal{NP-HARD}$
+## Die Klasse NP-HARD
 
-Ein Problem ist in $\mathcal{NP-HARD}$, wenn es mindestens so schwer ist, wie
+Ein Problem ist in $\mathcal{NP}$-HARD, wenn es mindestens so schwer ist, wie
 alle Probleme in $\mathcal{NP}$, was bedeutet, dass ein schneller Algorithmus
 für dieses Problem auch alle Probleme in $\mathcal{NP}$ löst. Diese Eigenschaft
 lässt sich recht außwendig direkt beweisen, in dem man die Begriffe Problem,
 Lösung und Algorithmus weiter formalisiert und über diese Definitionen
 argumentiert, dafür siehe Abschnitt Satz von Cook. Sie lässt sich aber auch
 indirekt beweisen, in dem man auf Probleme zurückgreift, bei denen die
-Zugehörigkeit zu $\mathcal{NP-HARD}$ schon bewiesen wurde.
+Zugehörigkeit zu $\mathcal{NP}$-HARD schon bewiesen wurde.
 
-Die Zugehörigkeit zu wird $\mathcal{NP-HARD}$ gezeigt, in dem man zeigt, dass
-ein Problem, welches bekanntermaßen in $\mathcal{NP-HARD}$ ist, leichter oder
+Die Zugehörigkeit zu wird $\mathcal{NP}$-HARD gezeigt, in dem man zeigt, dass
+ein Problem, welches bekanntermaßen in $\mathcal{NP}$-HARD ist, leichter oder
 gleich schwer zu lösen ist. Das wird durch eine sogenannte Reduktion gezeigt.
 Bei einer Reduktion konstruiert man ein bekanntes Problem in dem zu
 untersuchenden Problem, so dass ein Lösungsalgorithmus für das neue Problem auch
 das bekannte Problem lösen kann. Wenn für das neue Problem ein schneller
 Algorithmus existieren würde (also mit polynomieller Zeit), würde für das alte
-Problem in $\mathcal{NP-HARD}$ auch ein schneller Algorithmus existieren, was
+Problem in $\mathcal{NP}$-HARD auch ein schneller Algorithmus existieren, was
 aber der bekannten Schwierigkeit wiederspricht. Es ist dabei wichtig, dass diese
 Reduktion auch in polynomieller Zeit durchgeführt werden kann, denn nur in
 diesem Fall lassen sich die Reduktion und der Algorithmus zu einem neuen,
