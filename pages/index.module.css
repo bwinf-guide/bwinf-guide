@@ -16,11 +16,11 @@
 }
 
 h1.title {
-  @apply font-bold text-8xl;
+  @apply font-bold text-7xl md:text-8xl;
 }
 
 p.subtitle {
-  @apply text-xl w-2/3;
+  @apply text-xl w-5/6 md:w-2/3;
 }
 
 .start-btn {
