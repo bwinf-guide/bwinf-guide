@@ -2,32 +2,45 @@
 title: Komplexitätstheorie
 ---
 
-# Komplexitätstheorie
-
 import IncompletePage from '@components/IncompletePage.tsx'
 
-Die Komplexitätstheorie beschaftigt sich mit der Schwierigkeit von Problemen der Informatik. Sie ermöglicht Aussagen darüber, wie viel Zeit mindestens benötigt wird,
-um ein Problem zu lösen. 
+
+# Komplexitätstheorie
+
+Die Komplexitätstheorie beschaftigt sich mit der Schwierigkeit von Problemen der
+Informatik. Sie ermöglicht Aussagen darüber, wie viel Zeit mindestens benötigt
+wird, um ein Problem zu lösen. 
+
 ## Motivation
-Bei der Bearbeitung der zweiten Runde des Bundeswettbewerbs kommt es oft vor, dass sich für ein Problem einfach kein schneller Algorithmus finden lässt, sondern für alle Lösungen
-die Laufzeit exponentiell mit der Eingabelänge wächst. 
-Wenn wir zum Beispiel versuchen zu prüfen, ob ein aussagenlogischer Ausdruck erfüllbar ist, ist es kaum zu vermeiden, alle möglichen Variablenbelegungen durchzuprobieren.
-In solchen Fällen ist es oft möglich zu beweisen, dass es keinen Algorithmus geben kann, der schneller als exponentiell ist.
+Bei der Bearbeitung der zweiten Runde des Bundeswettbewerbs kommt es oft vor,
+dass sich für ein Problem einfach kein schneller Algorithmus finden lässt,
+sondern für alle Lösungen die Laufzeit exponentiell mit der Eingabelänge wächst.
+Wenn wir zum Beispiel versuchen zu prüfen, ob ein aussagenlogischer Ausdruck
+erfüllbar ist, ist es kaum zu vermeiden, alle möglichen Variablenbelegungen
+durchzuprobieren. In solchen Fällen ist es oft möglich zu beweisen, dass es
+keinen Algorithmus geben kann, der schneller als exponentiell ist.
 
 ## Komplexitätsklassen
 
-In der Komplexitätstheorie werden Probleme in Schwierigkeitsklassen eingeordnet. Für den Bundeswettbewerb sind vor allem die Klassen
-$\mathcal{P}$, $\mathcal{NP}$ und $\mathcal{NP-HARD}$ wichtig. Zur Klasse $\mathcal{P}$ gehören Probleme, die in polynomieller Zeit gelößt werden können,
-das heißt, es gibt einen Algorithmus mit Zeitkomplexität $O(n^k)$ mit festem $k$. Die Zugehörigkeit zu dieser Klasse wird durch einen Algorithmus
-zusammen mit einer Analyse seiner Laufzeit gezeigt.
-Zur Klasse $\mathcal{NP}$ gehören Probleme, bei denen die Richtigkeit einer Lösung schnell (in polynomieller Zeit) überprüfbar ist. Zugehörigkeit wird auch hier
-durch Angabe eines Algorithmus gezeigt.
- Zur Klasse $\mathcal{NP-HARD}$ gehören Probleme, die mindestens so schwer sind, wie alle Probleme in $\mathcal{NP}$. Für solche Probleme gibt es
- (vermutlich) keine schnellen Algorithmen.
+In der Komplexitätstheorie werden Probleme in Schwierigkeitsklassen eingeordnet.
+Für den Bundeswettbewerb sind vor allem die Klassen $\mathcal{P}$,
+$\mathcal{NP}$ und $\mathcal{NP-HARD}$ wichtig. Zur Klasse $\mathcal{P}$ gehören
+Probleme, die in polynomieller Zeit gelößt werden können, das heißt, es gibt
+einen Algorithmus mit Zeitkomplexität $O(n^k)$ mit festem $k$. Die Zugehörigkeit
+zu dieser Klasse wird durch einen Algorithmus zusammen mit einer Analyse seiner
+ Laufzeit gezeigt. Zur Klasse $\mathcal{NP}$ gehören Probleme, bei denen die
+ Richtigkeit einer Lösung schnell (in polynomieller Zeit) überprüfbar ist.
+ Zugehörigkeit wird auch hier durch Angabe eines Algorithmus gezeigt. Zur Klasse
+ $\mathcal{NP-HARD}$ gehören Probleme, die mindestens so schwer sind, wie alle
+ Probleme in $\mathcal{NP}$. Für solche Probleme gibt es (vermutlich) keine
+ schnellen Algorithmen.
+
 ## Die Klasse $\mathcal{P}$
 
-Probleme gehören zur Klasse $\mathcal{P}$, wenn es einen Algorithmus gibt, der sie in polynomieller Zeit löst, also Zeit in $O(n^k)$ mit festem $k$ benötigt.
-Wir wollen die Klasse $\mathcal{P}$ an einem Beispiel illustrieren. Es sei die Frage zu beantworten, ob eine Liste von Zahlen irgendeine Zahl mehrmals enthält.
+Probleme gehören zur Klasse $\mathcal{P}$, wenn es einen Algorithmus gibt, der
+sie in polynomieller Zeit löst, also Zeit in $O(n^k)$ mit festem $k$ benötigt.
+Wir wollen die Klasse $\mathcal{P}$ an einem Beispiel illustrieren. Es sei die
+Frage zu beantworten, ob eine Liste von Zahlen irgendeine Zahl mehrmals enthält.
 Dieses Problem lässt sich mit folgendem Algorithmus lösen:
 ```
 enthält_duplikate(list : Liste von Int) -> Bool :
@@ -39,27 +52,46 @@ enthält_duplikate(list : Liste von Int) -> Bool :
         füge n zu unique hinzu
     gib Wahr zurück
 ```
-Dieser Algorithmus muss im Schritt $s$ maximal $s-1$ Vergleichsoperationen durchführen, denn die aktuelle Zahl muss höchstens mit allen vorherigen verglichen werden.
-Er braucht also $\sum_{s=1}^{n}s=O(n^2)$ Vergleichsoperationen, und unter der Annahme, dass ein Vergleich konstante Zeit benötigt, so auch Zeit $O(n^2)$. Damit haben wir
-gezeigt, dass dieses Problem in $\mathcal{P}$ liegt.
+
+Dieser Algorithmus muss im Schritt $s$ maximal $s-1$ Vergleichsoperationen
+durchführen, denn die aktuelle Zahl muss höchstens mit allen vorherigen
+verglichen werden. Er braucht also $\sum_{s=1}^{n}s=O(n^2)$
+Vergleichsoperationen, und unter der Annahme, dass ein Vergleich konstante Zeit
+benötigt, so auch Zeit $O(n^2)$. Damit haben wir gezeigt, dass dieses Problem in
+$\mathcal{P}$ liegt.
 
 ## Die Klasse $\mathcal{NP}$
 
-Zur Klasse $\mathcal{NP}$ gehören Probleme, bei denen eine Lösung schnell überprüft werden kann. Die Erfüllbarkeit aussagenlogischer Ausdrücke von oben ist ein Beispiel dafür:
-Wenn wir eine Variablenbelegung gegeben haben, können wir schnell prüfen, ob diese den Ausdruck erfüllt, in dem wir den Ausdruck mit der Belegung einfach auswerten.
-Außerdem sind alle Probleme in $\mathcal{P}$ auch in $\mathcal{NP}$: Wenn wir für ein Problem in $\mathcal{P}$ eine Lösung gegebeben haben, können wir den schnellen Lösungsalgorithmus
-anwenden und überprüfen, ob die gegebene Lösung zur gefundenen equivalent ist, und so schnell deren Richtigkeit prüfen.
+Zur Klasse $\mathcal{NP}$ gehören Probleme, bei denen eine Lösung schnell
+überprüft werden kann. Die Erfüllbarkeit aussagenlogischer Ausdrücke von oben
+ist ein Beispiel dafür: Wenn wir eine Variablenbelegung gegeben haben, können
+wir schnell prüfen, ob diese den Ausdruck erfüllt, in dem wir den Ausdruck mit
+der Belegung einfach auswerten. Außerdem sind alle Probleme in $\mathcal{P}$
+auch in $\mathcal{NP}$: Wenn wir für ein Problem in $\mathcal{P}$ eine Lösung
+gegebeben haben, können wir den schnellen Lösungsalgorithmus anwenden und
+überprüfen, ob die gegebene Lösung zur gefundenen equivalent ist, und so schnell
+deren Richtigkeit prüfen.
 
 ## Die Klasse $\mathcal{NP-HARD}$
 
-Ein Problem ist in $\mathcal{NP-HARD}$, wenn es mindestens so schwer ist, wie alle Probleme in $\mathcal{NP}$, was bedeutet, dass ein schneller Algorithmus für dieses Problem auch alle
-Probleme in $\mathcal{NP}$ löst. Diese Eigenschaft lässt sich recht außwendig direkt beweisen, in dem man die Begriffe Problem, Lösung und Algorithmus weiter
-formalisiert und über diese Definitionen argumentiert, dafür siehe Abschnitt Satz von Cook. Sie lässt sich aber auch indirekt beweisen, in dem man auf Probleme zurückgreift,
-bei denen die Zugehörigkeit zu $\mathcal{NP-HARD}$ schon bewiesen wurde.
+Ein Problem ist in $\mathcal{NP-HARD}$, wenn es mindestens so schwer ist, wie
+alle Probleme in $\mathcal{NP}$, was bedeutet, dass ein schneller Algorithmus
+für dieses Problem auch alle Probleme in $\mathcal{NP}$ löst. Diese Eigenschaft
+lässt sich recht außwendig direkt beweisen, in dem man die Begriffe Problem,
+Lösung und Algorithmus weiter formalisiert und über diese Definitionen
+argumentiert, dafür siehe Abschnitt Satz von Cook. Sie lässt sich aber auch
+indirekt beweisen, in dem man auf Probleme zurückgreift, bei denen die
+Zugehörigkeit zu $\mathcal{NP-HARD}$ schon bewiesen wurde.
 
-Die Zugehörigkeit zu wird $\mathcal{NP-HARD}$ gezeigt, in dem man zeigt, dass ein Problem, welches bekanntermaßen in $\mathcal{NP-HARD}$ ist, leichter oder gleich schwer zu lösen ist.
-Das wird durch eine sogenannte Reduktion gezeigt. Bei einer Reduktion konstruiert man ein bekanntes Problem in dem zu untersuchenden Problem, so dass ein Lösungsalgorithmus für das neue Problem
-auch das bekannte Problem lösen kann. Wenn für das neue Problem ein schneller Algorithmus existieren würde (also mit polynomieller Zeit), würde für das alte Problem in $\mathcal{NP-HARD}$
-auch ein schneller Algorithmus existieren, was aber der bekannten Schwierigkeit wiederspricht. Es ist dabei wichtig, dass diese Reduktion auch in polynomieller Zeit durchgeführt werden
-kann, denn nur in diesem Fall lassen sich die Reduktion und der Algorithmus zu einem neuen, schnellen Algorithmus verbinden.
-
+Die Zugehörigkeit zu wird $\mathcal{NP-HARD}$ gezeigt, in dem man zeigt, dass
+ein Problem, welches bekanntermaßen in $\mathcal{NP-HARD}$ ist, leichter oder
+gleich schwer zu lösen ist. Das wird durch eine sogenannte Reduktion gezeigt.
+Bei einer Reduktion konstruiert man ein bekanntes Problem in dem zu
+untersuchenden Problem, so dass ein Lösungsalgorithmus für das neue Problem auch
+das bekannte Problem lösen kann. Wenn für das neue Problem ein schneller
+Algorithmus existieren würde (also mit polynomieller Zeit), würde für das alte
+Problem in $\mathcal{NP-HARD}$ auch ein schneller Algorithmus existieren, was
+aber der bekannten Schwierigkeit wiederspricht. Es ist dabei wichtig, dass diese
+Reduktion auch in polynomieller Zeit durchgeführt werden kann, denn nur in
+diesem Fall lassen sich die Reduktion und der Algorithmus zu einem neuen,
+schnellen Algorithmus verbinden.
