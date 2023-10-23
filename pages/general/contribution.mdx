@@ -20,42 +20,40 @@ Ordner `pages/` finden kann. MDX-Dateien sind im Grunde nur Markdown, in
 denen React-Komponente sowie Html-Tags direkt genutzt werden können. Eine
 mögliche Seite könnte so aussehen:
 
-```mdx filename="pages/allgemeines/meine-seite.mdx"
+````mdx filename="pages/general/meine-seite.mdx"
 # Seite Überschrift
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis malesuada
 risus at volutpat. Pellentesque eget pretium diam. Maecenas lobortis gravida 
 enim, non lobortis sapien maximus ut.
 
-\`\`\`py
+```py
 a = 1
 b = 2
 c = a + b
-\`\`\`
-
+```
 
 ## Abschnitt 1
 
-\`\`\`math
-\pmatrix\{
+```math
+\pmatrix{
   1 & 2 & 3 \\
   4 & 5 & 6 \\
   7 & 8 & 9
-\}
-\`\`\`
-
+}
+```
 
 ## Abschnitt 2
 
 Verweise auf [andere Websiten](https://bwinf.de) sind ebenfalls möglich. 
-```
+````
 
 
 ## React-Komponenten
 
 In MDX kann man React-Komponenten ohne Weiteres direkt verwenden, z.B.: 
 
-```mdx filename="pages/allgemeines/meine-seite.mdx"
+```mdx filename="pages/general/meine-seite.mdx"
 import IncompleteSection from '@components/IncompleteSection.tsx'
 
 
@@ -64,18 +62,33 @@ import IncompleteSection from '@components/IncompleteSection.tsx'
 <IncompleteSection />
 ```
 
+## Literaturverweis
+
+Man kann weiterführende Literatur bzw. Quelle für eine Seite angeben:
+
+```mdx filename="pages/general/meine-seite.mdx"
+import { ReferenceList, ReferenceListItem } from '@components/ReferenceList.tsx'
+
+<ReferenceList>
+    <ReferenceListItem url="https://seite1.de" urlText="Seite 1" desc="Beschreibung der Quelle."></ReferenceListItem>
+    <ReferenceListItem url="seite2.de" urlText="Seite 2" desc="Beschreibung"></ReferenceListItem>
+    <ReferenceListItem url="seite3.de" urlText="Seite 3" desc="Beschreibung"></ReferenceListItem>
+    <ReferenceListItem url="seite4.de" urlText="Seite 4" desc="Beschreibung"></ReferenceListItem>
+</ReferenceList>
+```
+
 
 ## Ordnerstrukturen
 
 Das Routing der Website folgt dem Pfad der MDX-Dateien in `pages/`. So
-wird z.B. die Datei `pages/allgemeines/contribution.mdx` unter der URL
-`/allgemeines/contribution` erreichbar sein.
+wird z.B. die Datei `pages/general/contribution.mdx` unter der URL
+`/general/contribution` erreichbar sein.
 
 Es ist möglich, die Überschrift der jeweiligen Seiten zu einem anderen als
 dem eigenen Datei-Namen zu ändern. Dazu fügt man einen Eintrag in der
 Datei `pages/**/_meta.json` wie folgt hinzu:
 
-```json filename="pages/allgemeines/_meta.json"
+```json filename="pages/general/_meta.json"
 {
   "index": {
     "title": "Willkommen"
