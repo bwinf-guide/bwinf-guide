@@ -11,14 +11,15 @@ export const ReferenceList: React.FC<{ children }> = ({ children }) => {
 }
 
 
-export const ReferenceListItem: React.FC<{ url: string, urlText: string, desc: string, isStared: boolean }>
-    = ({ url, urlText, desc, isStared }) => {
+export const ReferenceListItem: React.FC<{ url: string, title: string, author: string, isStared: boolean }>
+    = ({ url, title, author, isStared }) => {
         return (
             <li className={styles["list-item"]}>
-                <a href={url}
+                <p className={styles["list-item-author"]}>{author}</p>
+                <a
+                    href={url}
                     target="_blank"
-                    className={styles["list-item-link"]}>{urlText}</a>
-                <p className={styles["list-item-desc"]}>{desc}</p>
+                    className={styles["list-item-link"]}>{title}</a>
 
             </li>
         )

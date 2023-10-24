@@ -50,8 +50,7 @@
 }
 
 .list-item-link {
-    @apply w-1/4 font-semibold text-amber-700;
-    max-width: 160px;
+    @apply font-semibold text-amber-700;
 }
 
 :global(.dark) .list-item-link {
@@ -66,10 +65,11 @@
     @apply text-amber-300;
 }
 
-.list-item-desc {
-    @apply text-gray-600;
+.list-item-author {
+    @apply text-gray-600 w-1/4;
+    max-width: 160px;
 }
 
-:global(.dark) .list-item-desc {
+:global(.dark) .list-item-author {
     @apply text-gray-400;
 }
