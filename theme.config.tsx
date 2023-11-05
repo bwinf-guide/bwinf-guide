@@ -62,5 +62,8 @@ export default {
   },
   navbar: {
     extraContent: <><ThemeSwitch lite={true} /></>
+  },
+  toc: {
+    title: "Auf dieser Seite"
   }
 }

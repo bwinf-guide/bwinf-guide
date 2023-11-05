@@ -12,6 +12,7 @@ beiden Jahren der Schule) sind.
 Von den fünf (bzw. sieben) Aufgaben müsst ihr **mindestens** drei davon
 bearbeiten, damit ihr eine Chance habt, in die zweite Runde weiterzukommen. 
 
+
 ## Punkte und Preise
 
 Bei jeder Aufgabe der ersten Runde beginnt man mit fünf Punkten, welche bei
@@ -19,14 +20,115 @@ Fehlern oder Mängeln in der eingereichten Lösung abgezogen werden können. Daz
 gibt es ein "Erwartungshorizont" mit Kriterien, die der Bewertung zugrunde
 liegen. Ein kleiner Fehler führt i.d.R. zu einem Punktabzug, in schwerwiegenden
 Fällen bis zu zwei Punkten. Nur ansatzweise oder insgesamt ungenügend
-bearbeitete Aufgaben bekommen mehr Punktabzüge, im schlimmsten Fall wird 0 Punkt
-für die Aufgabe vergeben. 
+bearbeitete Aufgaben bekommen mehr Punktabzüge. In der ersten Runde werden keine
+Bonuspunkte vergeben. 
 
 Maßgebend für die Preise der ersten Runde sind die drei Aufgaben mit den
 höchsten Punktzahlen. Das heißt, wenn ihr mehr als drei Aufgaben bearbeitet,
 werden nur die drei Aufgaben zur Preisentscheidung herangezogen, die am besten
-bewertet sind.  
+bewertet sind. Da bei der Bearbeitung auch mal was schief gehen kann, empfehlen
+wir, mehr als drei Aufgaben zu bearbeiten, um eure Chance für die zweite Runde
+zu erhöhen. 
 
+Die Ergebnisse der ersten Runde werden normalerweise kurz nach Weihnachten im
+AMS veröffentlicht. Die Zuordnung von Preisen und Punkten erfolgt durch die
+folgende Tabelle:
+
+|Erreichte Punktzahl|Preis|
+|:----|:----|
+|15 - 14|1. Preis|
+|13 - 12|2. Preis|
+|11 - 9|3. Preis|
+|\< 9|Teilgenommen|
+
+
+## Teams
+
+Teamarbeit ist in der ersten Runde erlaubt, auch wenn Teammitglieder aus
+verschiedenen Jahrgangstufen oder Schulen kommen, solange alle die
+Teilnahmevoraussetzung erfüllen. Hierzu muss jedes Team auch mindestens drei
+Aufgaben abgeben, welche man unter den Teammitgliedern aufteilen kann. Die
+Einsendung eines Teams wird als eine Einheit betrachtet. Mit der am Ende
+erreichten Punktzahl bekommen alle im Team den gleichen Preis und erwerben ggfs.
+auch dadurch alle die Teilnahmeberechtigung für die zweite Runde. 
+
+In einem gemischten Team aus Schülerinnen und Schüler der Qualifikationsphase
+und unteren Jahrgangstufen dürfen diejenige, die noch nicht in der
+Qualifikationsphase sind, auch an die Junioraufgaben arbeiten (ohne Hilfe von
+denjenigen aus der Qualifikationsphase). 
+
+Diejinige, die gleichzeitig am Juniorwettbewerb der 3. Runde und am
+Bundeswettbewerb der 1. Runde teilnehmen, brauchen **zwei seperate Teams**, eins
+für den Juniorwettbewerb und das andere für den Bundeswettbewerb. Es ist
+**nicht** ausreichend, wenn man die Lösung vom Bundeswettbewerb einfach bei dem
+Team für den Juniorwettbewerb abgibt. 
+
+
+## Dokumentation und Einsendung
+
+Ihr wisst noch nicht, wie ihr eine Dokumentation schreibt? Dann schau mal bei
+dem Modul [Dokumentation](/bwinf/hints/documentation) vorbei!
+
+Für jede bearbeitete Aufgabe braucht ihr eine Dokumentation, die ihr gemeinsam
+mit euren Programmen abgebt. Das abzugebende ZIP-Archiv soll folgende Struktur haben:
+
+```txt filename="einsendung.zip"
+/
+├── Junioraufgabe1.pdf
+├── Aufgabe1.pdf
+├── Aufgabe2.pdf
+├── Junioraufgabe1
+│   ├── Quelltext
+│   │   └── Junioraufgabe1.cpp
+│   └── AusfuehrbaresProgramm
+│       └── Junioraufgabe1.exe
+├── Aufgabe1
+│   ├── Quelltext
+│   │   └── Aufgabe1.cpp
+│   └── AusfuehrbaresProgramm
+│       └── Aufgabe1.exe
+└── Aufgabe2
+    ├── Quelltext
+    │   └── Aufgabe2.cpp
+    └── AusfuehrbaresProgramm
+        └── Aufgabe2.exe
+```
+
+oder, wenn man eine Skriptsprache verwendet hat:
+
+```txt filename="einsendung.zip"
+/
+├── Junioraufgabe1.pdf
+├── Aufgabe1.pdf
+├── Aufgabe2.pdf
+├── Junioraufgabe1
+│   └── Junioraufgabe1.py
+├── Aufgabe1
+│   └── Aufgabe1.py
+└── Aufgabe2
+    └── Aufgabe2.py
+```
+
+Eine Beispieleinsendung findet ihr [hier](https://bwinf.de/fileadmin/user_upload/Legacy/bwinf/Beispieleinsendung.zip). 
+
+Wie man ein ZIP-Archiv erstellt, könnt ihr in folgenden Websiten oder (wenn man
+nicht lesen will) in den YouTube Videos nachschauen:
+- [Windows (Text)](https://support.microsoft.com/de-de/windows/zippen-und-entzippen-von-dateien-8d28fa72-f2f9-712f-67df-f80cf89fd4e5)
+- [Windows (Youtube)](https://www.youtube.com/watch?v=-f1pEpRu31E)
+- [MacOS (Text)](https://support.apple.com/de-de/guide/mac-help/mchlp2528/mac)
+- [MacOS (Youtube)](https://www.youtube.com/watch?v=SUlI3-3mkU0)
+- [Linux (Text)](https://www.educative.io/answers/how-to-zip-files-and-folders-in-linux)
+
+
+## Quellen
+
+import { ReferenceList, ReferenceListItem } from '@components/ReferenceList.tsx'
+
+<ReferenceList>
+<ReferenceListItem url="https://bwinf.de/bundeswettbewerb/haeufige-fragen/" author="BWINF" title="BWINF FAQ" />
+<ReferenceListItem url="https://bwinf.de/fileadmin/bundeswettbewerb/41/Loesungshinweise411.pdf" author="BWINF" title="Lösungshinweise 41.1" />
+<ReferenceListItem url="https://bwinf.de/bundeswettbewerb/teilnehmen/einsendungen/teilnehmer/" author="BWINF" title="Struktur der Einsendung" />
+</ReferenceList>
 
 import IncompletePage from '@components/IncompletePage.tsx'
 
