@@ -1,5 +1,10 @@
 .list-root {
-    @apply list-none my-4;
+    @apply list-none my-6;
+    @apply border-t pt-4 border-neutral-200/70 contrast-more:border-neutral-400;
+}
+
+:global(.dark) .list-root {
+    @apply border-neutral-100/10 contrast-more:border-neutral-400;
 }
 
 .list-root > * {
