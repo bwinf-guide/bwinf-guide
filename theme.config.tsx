@@ -25,6 +25,8 @@ export default {
     const { title, frontMatter } = useConfig()
     const url =
       'https://bwinf.guide' + asPath
+    
+    const robots = asPath == "/impressum" ? <meta name="robots" content="noindex, nofollow" /> : <></>;
  
     return (
       <>
@@ -37,6 +39,7 @@ export default {
           property="og:description"
           content={frontMatter.description || 'Eine Einführung in den Bundeswettbewerb Informatik'}
         />
+        { robots }
       </>
     )
   },
