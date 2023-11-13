@@ -21,7 +21,7 @@ const AppFooter: React.FC = () => {
         <div className={"mt-4 flex flex-col md:flex-row " + styles["footer-links"]}>
           <Link href="/impressum#impressum">Impressum</Link>
           <Link href="/impressum#haftungsausschluss-disclaimer">Haftungsausschluss</Link>
-          <Link href="impressum#datenschutzerklärung">Datenschutzerklärung</Link>
+          <Link href="/impressum#datenschutzerklärung">Datenschutzerklärung</Link>
         </div>
       </div>
     </footer>
