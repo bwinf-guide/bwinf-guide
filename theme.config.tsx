@@ -31,6 +31,7 @@ export default {
     return (
       <>
         <meta property="og:url" content={url} />
+        <meta property="og:site_name" content="BWINF.GUIDE"></meta>
         <meta
           name="og:title"
           content={title ? title + ' - BWINF GUIDE' : 'BWINF GUIDE'}
