@@ -42,9 +42,10 @@ export default {
         <meta property="og:site_name" content="BWINF.GUIDE"></meta>
         <meta
           name="og:title"
-          content={title ? title + " - BWINF GUIDE" : "BWINF GUIDE"}
+          content={title ? title + " - BWINF GUIDE" : "BWINF GUIDE - Eine Einführung in den Bundeswettbewerb Informatik"}
         />
         <meta
+          name="description"          
           property="og:description"
           content={
             frontMatter.description ||
