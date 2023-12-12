@@ -32,6 +32,7 @@
 .list-item {
     @apply py-2;    
     @apply bg-slate-100/20;
+    @apply grid grid-cols-4;
 }
 
 :global(.dark) .list-item {
@@ -39,7 +40,7 @@
 }
 
 .list-item > * {
-    @apply inline-block;
+    @apply block;
 }
 
 .list-item:last-child {
@@ -56,6 +57,7 @@
 
 .list-item-link {
     @apply font-semibold text-amber-700;
+    @apply col-span-3 my-auto;
 }
 
 :global(.dark) .list-item-link {
@@ -71,8 +73,8 @@
 }
 
 .list-item-author {
-    @apply text-gray-600 w-1/4;
-    max-width: 160px;
+    @apply text-gray-600;
+    @apply pr-3;
 }
 
 :global(.dark) .list-item-author {
