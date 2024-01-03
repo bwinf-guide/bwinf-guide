@@ -1,5 +1,5 @@
 .footer-links a {
-  @apply text-zinc-800;
+  @apply text-zinc-800 mr-5;
   width: fit-content;
 }
 

@@ -1,0 +1,82 @@
+.list-root {
+    @apply list-none my-6;
+    @apply border-t pt-4 border-neutral-200/70 contrast-more:border-neutral-400;
+}
+
+:global(.dark) .list-root {
+    @apply border-neutral-100/10 contrast-more:border-neutral-400;
+}
+
+.list-root > * {
+    @apply px-6;
+}
+
+.list-header {
+    @apply rounded-t-md py-2 font-semibold uppercase border-b;
+    @apply bg-amber-100 border-b-slate-200;
+}
+
+.list-header p {
+    @apply text-amber-600;
+}
+
+:global(.dark) .list-header {
+    @apply bg-amber-600;
+    @apply border-b-0;
+}
+
+:global(.dark) .list-header p {
+    @apply text-amber-100;
+}
+
+.list-item {
+    @apply py-2;    
+    @apply bg-slate-100/20;
+    @apply grid grid-cols-4;
+}
+
+:global(.dark) .list-item {
+    @apply bg-slate-900/40;
+}
+
+.list-item > * {
+    @apply block;
+}
+
+.list-item:last-child {
+    @apply rounded-b-md shadow-md;
+}
+
+.list-item:nth-child(odd) {
+    @apply bg-slate-200/50;
+}
+
+:global(.dark) .list-item:nth-child(odd) {
+    @apply bg-slate-900/70;
+}
+
+.list-item-link {
+    @apply font-semibold text-amber-700;
+    @apply col-span-3 my-auto;
+}
+
+:global(.dark) .list-item-link {
+    @apply text-amber-400;
+}
+
+.list-item-link:hover {
+    @apply text-amber-500
+}
+
+:global(.dark) .list-item-link:hover {
+    @apply text-amber-300;
+}
+
+.list-item-author {
+    @apply text-gray-600;
+    @apply pr-3;
+}
+
+:global(.dark) .list-item-author {
+    @apply text-gray-400;
+}

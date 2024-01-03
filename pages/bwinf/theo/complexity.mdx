@@ -1,3 +1,131 @@
-import IncompletePage from '@components/IncompletePage.tsx'
+---
+title: Komplexitätstheorie
+---
 
-<IncompletePage />
+# Komplexitätstheorie
+
+Die Komplexitätstheorie beschäftigt sich mit der Schwierigkeit von Problemen der
+Informatik. Sie ermöglicht Aussagen darüber, wie viel Zeit mindestens benötigt
+wird, um ein Problem zu lösen.
+
+Bei der Bearbeitung der zweiten Runde des Bundeswettbewerbs kommt es oft vor,
+dass sich für ein Problem kein schneller Algorithmus finden lässt,
+sondern für alle Lösungen die Laufzeit exponentiell mit der Eingabelänge wächst.
+Wenn wir zum Beispiel versuchen zu prüfen, ob ein aussagenlogischer Ausdruck
+erfüllbar ist, ist es kaum zu vermeiden, alle möglichen Variablenbelegungen
+durchzuprobieren. In solchen Fällen ist es oft möglich zu beweisen, dass es
+keinen Algorithmus geben kann, der schneller als exponentiell ist.
+
+## Komplexitätsklassen
+
+In der Komplexitätstheorie werden Probleme in Schwierigkeitsklassen eingeordnet.
+Für den Bundeswettbewerb sind vor allem die Klassen $\mathcal{P}$,
+$\mathcal{NP}$ und $\mathcal{NP}$-HARD wichtig. Zur Klasse $\mathcal{P}$ gehören
+Probleme, die in polynomieller Zeit gelößt werden können, das heißt, es gibt
+einen Algorithmus mit Zeitkomplexität $O(n^k)$ mit Eingabelänge $n$ und festem $k$. Die Zugehörigkeit
+zu dieser Klasse wird durch einen Algorithmus zusammen mit einer Analyse seiner
+Laufzeit gezeigt. Zur Klasse $\mathcal{NP}$ gehören Probleme, bei denen die
+Richtigkeit einer Lösung schnell (in polynomieller Zeit) überprüfbar ist.
+Zugehörigkeit wird auch hier durch Angabe eines Algorithmus gezeigt. Zur Klasse
+$\mathcal{NP}$-HARD gehören Probleme, die mindestens so schwer sind, wie alle
+Probleme in $\mathcal{NP}$. Für solche Probleme gibt es (vermutlich) keine
+schnellen Algorithmen.
+
+### Die Klasse P
+
+Probleme gehören zur Klasse $\mathcal{P}$, wenn es einen Algorithmus gibt, der
+sie in polynomieller Zeit löst, also Zeit in $O(n^k)$ mit Eingabelänge $n$ und festem $k$ benötigt.
+Wir wollen die Klasse $\mathcal{P}$ an einem Beispiel illustrieren. Es sei die
+Frage zu beantworten, ob eine Liste von Zahlen irgendeine Zahl mehrmals enthält.
+Dieses Problem lässt sich mit folgendem Algorithmus lösen:
+
+```
+enthält_duplikate(list : Liste von Int) -> Bool :
+    initialisiere Liste unique
+    für alle n in list:
+        für alle m in unique:
+            if n == m:
+                gib Falsch zurück
+        füge n zu unique hinzu
+    gib Wahr zurück
+```
+
+Dieser Algorithmus muss im Schritt $s$ maximal $s-1$ Vergleichsoperationen
+durchführen, denn die aktuelle Zahl muss höchstens mit allen vorherigen
+verglichen werden. Er braucht also $\sum_{s=1}^{n}s=O(n^2)$
+Vergleichsoperationen, und unter der Annahme, dass ein Vergleich konstante Zeit
+benötigt, so auch Zeit $O(n^2)$. Damit haben wir gezeigt, dass dieses Problem in
+$\mathcal{P}$ liegt.
+
+### Die Klasse NP
+
+Zur Klasse $\mathcal{NP}$ gehören Probleme, bei denen eine Lösung schnell
+überprüft werden kann. Die Erfüllbarkeit aussagenlogischer Ausdrücke von oben
+ist ein Beispiel dafür: Wenn wir eine Variablenbelegung gegeben haben, können
+wir schnell prüfen, ob diese den Ausdruck erfüllt, in dem wir den Ausdruck mit
+der Belegung einfach auswerten. Außerdem sind alle Probleme in $\mathcal{P}$
+auch in $\mathcal{NP}$: Wenn wir für ein Problem in $\mathcal{P}$ eine Lösung
+gegebeben haben, können wir den schnellen Lösungsalgorithmus anwenden und
+überprüfen, ob die gegebene Lösung zur gefundenen equivalent ist, und so schnell
+deren Richtigkeit prüfen.
+
+### Die Klasse NP-HARD
+
+Ein Problem ist in $\mathcal{NP}$-HARD, wenn es mindestens so schwer ist, wie
+alle Probleme in $\mathcal{NP}$, was bedeutet, dass ein schneller Algorithmus
+für dieses Problem auch alle Probleme in $\mathcal{NP}$ löst. Wir sagen dann auch,
+dass das Problem $\mathcal{NP}$-schwer ist. Diese Eigenschaft
+lässt sich recht außwendig direkt beweisen, in dem man die Begriffe Problem,
+Lösung und Algorithmus weiter formalisiert und über diese Definitionen
+argumentiert, dafür siehe Abschnitt Satz von Cook. Sie lässt sich aber auch
+indirekt beweisen, in dem man auf Probleme zurückgreift, bei denen die
+Zugehörigkeit zu $\mathcal{NP}$-HARD schon bewiesen wurde.
+
+Die Zugehörigkeit zu wird $\mathcal{NP}$-HARD gezeigt, in dem man zeigt, dass
+ein Problem, welches bekanntermaßen in $\mathcal{NP}$-HARD ist, leichter oder
+gleich schwer zu lösen ist. Das wird durch eine sogenannte Reduktion gezeigt.
+Bei einer Reduktion konstruiert man ein bekanntes Problem in dem zu
+untersuchenden Problem, so dass ein Lösungsalgorithmus für das neue Problem auch
+das bekannte Problem lösen kann. Wenn für das neue Problem ein schneller
+Algorithmus existieren würde (also mit polynomieller Zeit), würde für das alte
+Problem in $\mathcal{NP}$-HARD auch ein schneller Algorithmus existieren, was
+aber der bekannten Schwierigkeit wiederspricht. Es ist dabei wichtig, dass diese
+Reduktion auch in polynomieller Zeit durchgeführt werden kann, denn nur in
+diesem Fall lassen sich die Reduktion und der Algorithmus zu einem neuen,
+schnellen Algorithmus verbinden.
+
+Wir wollen nun zeigen, dass SET-COVERING $\mathcal{NP}$-schwer ist, in dem wir
+VERTEX-COVER darauf reduzieren. Eine Instanz des SET-COVERING-Problems besteht
+aus einer Zahl $k$, einer Menge $U$, dem Universum, und $m$ Teilmengen $S_i \subseteq U$ für alle
+$0 \leq i < m$. Es soll geprüft werden, ob es $k$ unterschiedliche $S_i$ gibt, so dass
+deren Vereinigung gleich $U$ ist. 
+
+Beispielsweise kann unser Universum $U=\{1,2,3,4,5,6,7,8\}$ und $S_1=\{1,3,5,8\}$,
+$S_2=\{1,2,6,8\}$, $S_3=\{2,4,6,8\}$, und $S_4=\{5,6,7\}$ sein. Für $k=1$ ist die Instanz
+nicht erfüllbar, denn wir können kein $S_i$ auswählen, welches gleich $U$ ist. Für $k=3$
+ist die Instanz hingegen mit $S_1$, $S_3$, und $S_4$ erfüllbar, denn $S_1 \cup S_3 \cup S_4 = U$
+
+Beim VERTEX-COVER-Problem ist ein ungerichteter Graph mit Kanten $E$
+und Knoten $V$, und eine Zahl $k$ gegeben. Hier soll geprüft werden, ob es $k$ Knoten gibt,
+so dass die Vereinigung derer angrenzenden Kanten $E$ ergibt. Für VERTEX-COVER ist bekannt,
+dass es $\mathcal{NP}$-schwer ist.
+
+Wir reduzieren eine Instanz von VERTEX-COVER auf SET-COVERING, in dem wir das Universum $U$ auf die
+Kanten $E$ setzen, und für jeden Knoten $V_i$ ein $S_i$ einführen, welches die an dem Knoten endenden
+Kanten enthält, während $k$ gleich bleibt. Wenn wir nun $k$ verschiedene $S_i$ auswählen können, so dass
+deren Vereinigung gleich $U$ ist, dann decken die $k$ zugehörigen Knoten auch die Kanten des Graphen ab.
+Da diese Reduktion in polynomieller Zeit durchführbar ist (der Beweis sei dem interessierten Leser als Übung überlassen),
+ist SET-COVERING somit $\mathcal{NP}$-Schwer.
+
+## Die Klasse NP-COMPLETE
+
+Die Klasse $\mathcal{NP}$-COMPLETE ist die Schnittmenge von $\mathcal{NP}$ und $\mathcal{NP}$-Schwer. Für diese Probleme
+gibt es bis heute auch noch keine schnellen Algorithmen, jedoch kann ein schneller Algorithmus für irgendein $\mathcal{NP}$-schweres
+Problem auch diese Probleme schnell lösen.
+
+## Weiterführende Literatur
+
+Um eigene Reduktionen durchzuführen, ist es einerseits sinnvoll, sich mit schon vorhandenen Reduktionen zu beschäftigen,
+zum Beispiel mit Karps 21 $\mathcal{NP}$-vollständigen Problemen. Algorithmen, eine Einführung von Cormen et al. erläutert
+auch einige Reduktionen und stellt allgemeine Techniken zur Reduktion vor. Für eine ausführliche formale Einführung in die
+Komplexitätstheorie siehe zum Beispiel Theoretische Informatik, Eine umfassende Einführung von Priese und Erk.

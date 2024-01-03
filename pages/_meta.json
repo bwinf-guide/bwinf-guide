@@ -25,5 +25,13 @@
     "theme": {
       "layout": "full"
     }
+  },
+  "impressum": {
+    "type": "page",
+    "title": "Impressum",
+    "display": "hidden",
+    "theme": {
+      "layout": "full"
+    }
   }
 }

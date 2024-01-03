@@ -1,9 +1,14 @@
 .index-container {
-  @apply flex flex-col items-center justify-center px-16;
+  @apply flex flex-col items-center justify-center w-full;
 }
 
 .title-container {
-  @apply h-[calc(100vh-74px)] w-full flex flex-col items-baseline justify-center;
+  @apply h-[calc(100vh-74px)] flex flex-col items-baseline justify-center w-full;
+
+  max-width: 90rem;
+  padding-left: max(env(safe-area-inset-left),1.5rem);
+  padding-right: max(env(safe-area-inset-right),1.5rem);
+  margin: 0 auto;
 }
 
 .title-container * {
@@ -11,11 +16,11 @@
 }
 
 h1.title {
-  @apply font-bold text-8xl;
+  @apply font-bold text-7xl md:text-8xl;
 }
 
 p.subtitle {
-  @apply text-xl w-2/3;
+  @apply text-xl w-11/12 md:w-3/4;
 }
 
 .start-btn {
