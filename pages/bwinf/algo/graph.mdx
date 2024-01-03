@@ -4,4 +4,37 @@ title: Graphen
 
 import IncompletePage from '@components/IncompletePage.tsx'
 
-Ein Graph ist eine nicht-lineare Datenstruktur, die in vielen Bereichen der Informatik vorkommt und euch während eurer gesamten BWINF-Karriere begleiten wird. Stellt euch eine Landkarte vor, auf der ein kompliziertes Straßennetz eingezeichnet ist. Dies kann durch eine Abstraktion in einen Graphen deutlich vereinfacht werden. Dabei ersetzen wir die Kreuzungen durch sogenannte Knoten und die Straßen durch sogenannte Kanten. Knoten und Kanten sind die grundlegenden Bausteine eines jeden Graphen. Formal ist ein Graph G ein Paar (V,E), wobei V eine endliche Menge von Knoten und E eine endliche Menge von Kanten ist. 
+# Graphen
+Ein Graph ist eine abstrakte Datenstruktur, die in vielen Bereichen der Informatik verwendet wird. Ihr werdet Graphen während eurer gesamten BWINF-Karriere begegnen. Ein Graph besteht aus einer Menge von Objekten, die durch Verbindungen miteinander verknüpft sind. Diese Objekte nennt man Knoten des Graphen, und die Verbindungen nennt man Kanten. Man kann Graphen oft anschaulich darstellen, indem man die Knoten als Punkte und die Kanten als Linien zeichnet.
+
+Graphen können viele reale Situationen modellieren, zum Beispiel einen Stammbaum oder ein U-Bahn-Netz. In einem Stammbaum repräsentiert jeder Knoten ein Familienmitglied und jede Kante eine Eltern-Kind-Beziehung. In einem U-Bahn-Netz repräsentiert jeder Knoten eine Station und jede Kante eine direkte Strecke zwischen zwei Stationen.
+
+Formal definiert man einen Graphen G als ein Paar (V,E), wobei V eine endliche Menge von Knoten und E eine endliche Menge von Kanten ist. In der formalen Literatur schreibt man oft eine Kante als (u,v), was bedeutet, dass die Kante die Knoten u und v verbindet. In diesem Fall nennt man u und v Nachbarn.
+
+## Eigenschaften von Graphen
+Graphen besitzen bestimmte Eigenschaften, die je nach Anwendungsfall benötigt werden. Wir unterscheiden, ob ein Graph gerichtet oder ungerichtet ist. Das bedeutet, dass Kanten eine durch eine kleine Pfeilspitze vorgegebene Richtung besitzen. Dies ist hilfreich, wenn einseitige Beziehungen zwischen den Objekten bestehen, wie zum Beispiel beim Transport von Gütern.
+
+Zudem besitzt jeder Knoten einen bestimmten Grad. In einem ungerichteten Graphen ist dies die Anzahl der an einem Knoten anliegenden Kanten. In einem gerichteten Graphen unterscheiden wir zwischen dem Eingangsgrad und dem Ausgangsgrad. Wir zählen Kanten zum Ausgangsgrad eines Knotens, wenn sie an diesem beginnen, also der Knoten eine Beziehung zu einem anderen Knoten besitzt, und zum Eingangsgrad, wenn sie an diesem Knoten enden, also ein anderer Knoten eine Beziehung zu diesem Knoten besitzt.
+
+Zudem unterscheiden wir zwischen ungewichteten und gewichteten Graphen. Dabei ist das Gewicht oder die Kosten ein bestimmter Wert, der jeder Kante zugeordnet wird. Beispielsweise kann es die Kosten darstellen, um von Knoten A nach Knoten B zu gelangen. Die Kante (A,B) hat also beispielsweise das Gewicht 10, da man 10 Stunden von A nach B benötigt.
+
+Zudem besteht das Konzept des zusammenhängenden Graphen. Ein Graph ist zusammenhängend, wenn man von jedem Knoten aus jeden anderen Knoten über eine Abfolge von Kanten erreichen kann.
+
+Ein Graph ist azyklisch, wenn er keine Kreise besitzt, also immer nur ein Weg existiert, um von einem Knoten zu einem anderen zu gelangen. Ein azyklischer Graph mit N Knoten kann nie mehr als N-1 Kanten besitzen.
+
+Ein Graph ist vollständig, wenn er N Knoten und N*(N-1)/2 Kanten besitzt, also zwischen jedem Knotenpaar eine Kante verläuft.
+
+
+## Kategorien von Graphen 
+Ein Graph wird als Baum bezeichnet, wenn er N Knoten und N-1 Kanten besitzt und zusammenhängend ist. Ein Baum ist eine spezielle Art von Graph, der keine Schleifen enthält und jeder Knoten genau einen Vorgänger hat, mit Ausnahme der Wurzel, die keinen Vorgänger hat. Jeder Baum besitzt eine Wurzel, die meist ein beliebiger Knoten ist. Alle Nachbarn der Wurzel werden Kinder der Wurzel genannt. Alle Nachbarn dieser Kinder, die nicht die Wurzel sind, sind die Kinder der Kinder der Wurzel. Ein Graph bestehend aus mehreren Bäumen wird auch Wald genannt.
+
+Ein Graph ist bipartit, wenn wir die Knoten in zwei Kategorien unterteilen können, sodass anschließend nur Kanten zwischen und nicht innerhalb dieser Kategorien existieren. Eine solche Unterteilung wird auch als Bipartition bezeichnet. Formal ausgedrückt, ist ein Graph G bipartit, wenn es eine Partition der Knotenmenge V in zwei disjunkte Teilmengen U und V-U gibt, sodass jede Kante von G einen Knoten aus U mit einem Knoten aus V-U verbindet
+
+## Repräsentation von Graphen im Computer
+Es gibt zwei gängige Methoden, um Graphen im Computer darzustellen: die Adjazenzliste und die Adjazenzmatrix. Die Adjazenzliste wird bevorzugt, wenn der Graph deutlich weniger Kanten als N*(N-1) besitzt. Hierbei speichern wir für jeden Knoten alle seine Nachbarn in einer jeweiligen Liste ab.
+
+Die Adjazenzmatrix hingegen ist die bessere Wahl, wenn der Graph fast N*(N-1) Kanten besitzt oder wir schnell überprüfen wollen, ob eine Kante zwischen zwei Knoten existiert oder welches Gewicht sie besitzt. Sie wird als 2-dimensionale Liste, also als Tabelle, abgespeichert, wobei jedem Knoten eine Zeile und eine Spalte zugeordnet wird. Wir können nun in die jeweiligen Felder Einträge machen, ob bestimmte Kanten zwischen Knoten existieren. Ist der Graph ungerichtet, ist die resultierende Matrix symmetrisch, wobei im gerichteten Fall in die Zeilen alle Knoten stehen, die zum Ausgangsgrad beitragen, und in die Spalten alle Knoten, die zum Eingangsgrad beitragen.
+
+## Weiterführende Literatur
+
+Das Buch ‘Algorithmen - Eine Einführung’ von Cormen et al. bietet eine umfassende und vielseitige Einführung in das moderne Studium von Algorithmen. Es stellt viele Algorithmen Schritt für Schritt vor, behandelt sie detailliert und macht deren Entwurf und Analyse allen Leserschichten zugänglich. Insbesondere werden alle wichtigen Konzepte von Graphen nochmal formal erläutert und umfassend ergänzt. Darüber hinaus bietet Wikipedia gute Artikel, die alles über Graphen prägnant zusammenfassen.
