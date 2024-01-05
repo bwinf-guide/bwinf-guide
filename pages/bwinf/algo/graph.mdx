@@ -9,7 +9,7 @@ Ein Graph ist eine abstrakte Datenstruktur, die in vielen Bereichen der Informat
 
 Graphen können viele reale Situationen modellieren, zum Beispiel einen Stammbaum oder ein U-Bahn-Netz. In einem Stammbaum repräsentiert jeder Knoten ein Familienmitglied und jede Kante eine Eltern-Kind-Beziehung. In einem U-Bahn-Netz repräsentiert jeder Knoten eine Station und jede Kante eine direkte Strecke zwischen zwei Stationen.
 
-<!--Ein Beispiel mit Bild wäre nett-->
+{/* text Ein Beispiel mit Bild wäre nett */}
 
 Formal definiert man einen Graphen $G$ als eine Tupel $(V,E)$, wobei $V$ eine endliche Menge von Knoten und $E$ eine endliche Menge von Kanten ist. In der formalen Literatur schreibt man oft eine Kante als $(u,v)$, was bedeutet, dass die Kante die Knoten $u$ und $v$ verbindet. In diesem Fall nennt man $u$ und $v$ Nachbarn.
 
@@ -35,11 +35,11 @@ Ein Graph ist bipartit, wenn wir die Knoten in zwei Kategorien unterteilen könn
 ## Repräsentation von Graphen im Computer
 Es gibt zwei gängige Methoden, um Graphen im Computer darzustellen: die Adjazenzliste und die Adjazenzmatrix. Die Adjazenzliste wird bevorzugt, wenn der Graph nur wenige Kanten besitzt im Vergleich zur Anzahl von Knoten (sparse graph). Hierbei speichern wir für jeden Knoten alle seine Nachbarn in einer jeweiligen Liste ab.
 
-<!--TODO: Bsp wäre gut-->
+{/* TODO: Bsp wäre gut */}
 
 Die Adjazenzmatrix hingegen ist die bessere Wahl, wenn es fast zwischen jeden zwei Knoten eine Kante gibt (dense graph) oder wir schnell überprüfen wollen, ob eine Kante zwischen zwei beliebigen Knoten existiert bzw. welches Gewicht sie besitzt. Sie wird als eine 2-dimensionale Liste, also als Tabelle, abgespeichert, wobei jedem Knoten eine Zeile und eine Spalte zugeordnet wird. Wir können nun in die jeweiligen Felder Einträge machen, ob bestimmte Kanten zwischen Knoten existieren. Ist der Graph ungerichtet, ist die resultierende Matrix symmetrisch, wobei im gerichteten Fall in die Zeilen alle Knoten stehen, die zum Ausgangsgrad beitragen, und in die Spalten alle Knoten, die zum Eingangsgrad beitragen.
 
-<!--TODO: besser erklären-->
+{/* TODO: besser erklären */}
 
 ## Weiterführende Literatur
 
