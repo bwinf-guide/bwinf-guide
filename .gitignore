@@ -2,6 +2,8 @@ Projektbeschreibung.md
 
 # Created by https://www.toptal.com/developers/gitignore/api/react,visualstudiocode,nextjs
 
+.vscode
+
 ### NextJS ###
 # dependencies
 /node_modules

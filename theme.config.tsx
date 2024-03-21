@@ -86,4 +86,7 @@ export default {
   toc: {
     title: "Auf dieser Seite",
   },
+  main: ({ children }) => <>
+    {children}
+  </>,
 };
