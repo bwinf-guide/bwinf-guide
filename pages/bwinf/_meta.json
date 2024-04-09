@@ -2,5 +2,6 @@
     "index": "Übersicht",
     "algo": "Algorithmen",
     "theo": "Theoretische Informatik",
-    "hints": "Tipps"
+    "comp": "Tipps zum Wettbewerb",
+    "prog": "Programmiertipps"
 }
