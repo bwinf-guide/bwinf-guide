@@ -15,11 +15,11 @@ const AppFooter: React.FC = () => {
           <a href="https://github.com/bwinf-guide/bwinf-guide" target="_blank">Github</a>
         </nav>
         <p className="mt-8">
-          &copy; 2023 BWINF GUIDE. Alle Rechte vorbehalten.
+          &copy; 2023-2024 BWINF.GUIDE. Alle Rechte vorbehalten.
         </p>
         <p>Ein Projekt des BWINF Alumni & Freunde e. V.</p>
         <div className={"mt-4 flex flex-col md:flex-row " + styles["footer-links"]}>
-          <Link href="/impressum#impressum">Impressum</Link>
+          <Link href="https://alumni.bwinf.de/wiki/impressum" target="_blank">Impressum</Link>
           <Link href="/impressum#haftungsausschluss-disclaimer">Haftungsausschluss</Link>
           <Link href="/impressum#datenschutzerklärung">Datenschutzerklärung</Link>
         </div>
